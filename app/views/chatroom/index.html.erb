@@ -1,25 +1,25 @@
 <h1 class="ui center aligned icon header">
-  <i class="circular users icon blue"></i>
-  Type a message
+  <i class="circular users icon violet"></i>
+  APP MASSAGE
 </h1>
 
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
-        <div class="ui feed">
+      <div class="content" id="messages">
+        <div class="ui feed" id="message-container">
           <%= render @messages %>
         </div>
        </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
           <div class="field">
-            <div class="ui fluid left icon input">
-              <input type="text" placeholder="Type a message ...">
-              <i class="borderd inverted blue icon edit"></i>
+            <div class="ui fluid icon input">
+              <%= f.text_field :body, placeholder: "Type a message....", class: "" %>
+              <%= f.button '<i class="bordered inverted violet icon send"></i>'.html_safe %>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>

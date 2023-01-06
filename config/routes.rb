@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'messages/index'
+  # get 'messages/index'
   root 'chatroom#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post 'message', to: 'messages#create'
 
   mount ActionCable.server, at: '/cable'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
