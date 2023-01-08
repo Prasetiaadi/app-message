@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
-
   def new # signup form and submit data
-    @user = User.new
+    @users = User.new
   end
 
   def create # handle new form signup data
@@ -11,7 +10,7 @@ class UsersController < ApplicationController
       flash[:success] = "#{@user.username}, you have successfully signed up"
       redirect_to root_path
     else
-      flash[:error] = 'Something was wrong with your data'
+      flash[:error] = "Something was wrong with your data"
       redirect_to signup_path
     end
   end
@@ -21,5 +20,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password, :email)
   end
-
 end
