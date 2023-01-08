@@ -24,7 +24,7 @@ production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
   adapter: postgresql
-  database: railwayapp_production
+  database: db/production.postgre
   username: chatapp
   password: <%= ENV["RAILWAYAPP_DATABASE_PASSWORD"] %>
 
