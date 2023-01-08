@@ -1,0 +1,23 @@
+<h2 class="ui center aligned icon header more-space">
+    <i class="ui circular image">
+      <%= gravatar_for(@user) %>
+    </i> <br>
+  Welcome <%= @user.username.capitalize %>
+</h2>
+
+<h3> Your messages </h3>
+
+<div class="ui center">
+
+  <div class="twelve wide column">
+    <div class="ui fluid raised card chatbox">
+        <div class="content" id="messages">
+          <div class="ui feed">
+            <% @user_messages.each do |msg| %>
+            <p> <%= msg.body %> - <%= time_ago_in_words(msg.created_at) %> ago </p>
+            <% end %>
+          </div> <!-- end ui feed -->
+        </div> <!-- end 12 wide column -->
+    </div>
+  </div>
+</div>

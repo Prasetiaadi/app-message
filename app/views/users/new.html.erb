@@ -1,8 +1,8 @@
-<h2 class="ui center aligned header more-space">Welcome to App Message</h2>
-<h3 class="ui center aligned medium icon header">
-  <i class="circular aligned violet signup tiny icon"></i>
+<h1 class="ui center aligned header more-space">Welcome to ChatApp</h1>
+<h2 class="ui center aligned medium icon header">
+  <i class="circular inverted violet power off icon"></i>
   Sign up
-</h3>
+</h2>
 
 <div class="ui placeholder segment">
   <div class="ui one column very relaxed stackable grid">
@@ -15,7 +15,13 @@
             <i class="user icon"></i>
           </div>
         </div>
-
+        <div class="field">
+          <%= f.label :email, "Email" %>
+          <div class="ui left icon input">
+            <%= f.text_field :email, placeholder: "Email" %>
+            <i class="mail icon"></i>
+          </div>
+        </div>
         <div class="field">
           <%= f.label :password, "Password" %>
           <div class="ui left icon input">

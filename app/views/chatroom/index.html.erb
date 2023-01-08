@@ -1,22 +1,24 @@
-<h2 class="ui center aligned icon header">
-  <i class="circular users icon violet"></i>
-  APP MASSAGE
+<h2 class="ui center aligned large icon header more-space">
+  <i class="circular inverted violet sun outline icon"></i>
+  Type Something
 </h2>
 
-<div class="ui container">
-  <div class="ui grid container">
+<div class="ui two column grid">
+
+  <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content" id="messages">
-        <div class="ui feed" id="message-container">
-          <%= render @messages %>
-        </div>
-       </div>
+        <div class="content" id="messages">
+          <div class="ui feed" id="message-container">
+            <%= render @messages %>
+          </div> <!-- end ui feed -->
+        </div> <!-- end 12 wide column -->
+
       <div class="extra content">
-        <%= form_for(@message, html: {class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f| %>
+        <%= form_for(@message, html: { class: 'ui reply form', role: 'form' }, url: message_path, remote: true) do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <%= f.text_field :body, placeholder: "Type a message....", class: "" %>
-              <%= f.button '<i class="bordered inverted violet icon send"></i>'.html_safe %>
+              <%= f.text_field :body, placeholder: 'Enter a message . . .' %>
+              <%= f.button '<i class="bordeviolet violet inverted icon edit"> </i>'.html_safe %>
             </div>
           </div>
         <% end %>
@@ -24,22 +26,18 @@
     </div>
   </div>
 
-  <%# <div class="four wide column">
+  <div class="four wide column">
     <div class="ui fluid raised card chatbox">
       <div class="content">
-        <div class="ui blue vertical menu">
-          <a class="active item">
-            Home
-          </a>
-          <a class="item">
-            Messages
-          </a>
+        <div class="ui vertical menu">
+          <%= link_to 'Messages', users_path, class: 'item' %>
           <a class="item">
             Friends
           </a>
         </div>
       </div>
     </div>
-  </div> %>
-</div>
+  </div> <!-- end 4 column grid-->
 
+
+</div> <!-- two column grid-->

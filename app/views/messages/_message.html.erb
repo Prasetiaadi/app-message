@@ -1,9 +1,13 @@
 <div class="event">
+  <div class="label">
+    <%= gravatar_for(message.user) %>
+  </div>
   <div class="content">
-    <div class="ui compact medium violet message">
-      <% # <%= gravatar_for(message.user) %>
-      <em><%= message.user.username %></em> :
-      <em><%= message.body %></em>
+    <div class="summary">
+      <em> <%= message.user.username %> </em>: <%= message.body %>
+      <div class="date">
+        <%= time_ago_in_words(message.created_at) %> ago
+      </div>
     </div>
   </div>
-</div>
+</div><!-- end event -->

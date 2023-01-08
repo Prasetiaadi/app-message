@@ -15,26 +15,27 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      flash[:success] = "Berhasil login"
+      flash[:success] = 'You have successfully logged in'
       redirect_to root_path
     else
-      flash.now[:error] = "Ada yang salah dengan login Anda"
-      render "new"
+      flash.now[:error] = "Credentials were wrong."
+      render 'new'
     end
   end
 
   def destroy # logout - delete session
     session[:user_id] = nil
-    flash[:success] = "Anda berhasil logout"
-    redirect_to root_path
+    flash[:success] = "You have successfully logged out"
+    redirect_to login_path
   end
 
   private
 
   def logged_in_redirect
     if logged_in?
-      flash[:error] = "Anda sudah login"
+      flash[:error] = "You are already logged in"
       redirect_to root_path
     end
   end
+
 end
