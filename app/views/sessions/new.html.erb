@@ -28,14 +28,18 @@
         <%= f.button "Login", class: "ui violet submit button" %>
       <% end %>
     </div>
-    <div class="middle aligned column">
-      <div class="ui big violet button">
-        <i class="signup icon"></i>
-        Sign Up
-      </div>
-    </div>
+
+   <div class="middle aligned column">
+        <%= link_to "<i class='signup icon'></i> Sign up".html_safe , signup_path, class: 'ui big violet button' %>    </div>
   </div>
   <div class="ui vertical divider">
     Or
+  </div>
+</div>
+
+<div class="ui two column very relaxed stackable grid more-space">
+  <div class="column right aligned">
+    <i class="circular inverted large violet user icon"> </i> <br>
+    <p> <%= @users.count %> signed up users </p>
   </div>
 </div>

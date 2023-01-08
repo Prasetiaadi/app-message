@@ -1,7 +1,9 @@
 <div class="event">
   <div class="content">
-    <div class="ui compact mini violet message">
-      <em><%= message.user.username %></em> --> <%= message.body %>
+    <div class="ui compact medium violet message">
+      <% # <%= gravatar_for(message.user) %>
+      <em><%= message.user.username %></em> :
+      <em><%= message.body %></em>
     </div>
   </div>
 </div>

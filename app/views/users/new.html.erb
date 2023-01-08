@@ -1,0 +1,30 @@
+<h2 class="ui center aligned header more-space">Welcome to App Message</h2>
+<h3 class="ui center aligned medium icon header">
+  <i class="circular aligned violet signup tiny icon"></i>
+  Sign up
+</h3>
+
+<div class="ui placeholder segment">
+  <div class="ui one column very relaxed stackable grid">
+    <div class="column">
+      <%= form_for(:user, html: { class: "ui form", role: "form" }, url: signup_path) do |f| %>
+        <div class="field">
+          <%= f.label :username, "Username" %>
+          <div class="ui left icon input">
+            <%= f.text_field :username, placeholder: "Username" %>
+            <i class="user icon"></i>
+          </div>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, "Password" %>
+          <div class="ui left icon input">
+            <%= f.password_field :password, placeholder: "Password" %>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <%= f.button "Sign up", class: "ui violet submit button" %>
+        <% end %>
+      </div>
+  </div>
+</div>

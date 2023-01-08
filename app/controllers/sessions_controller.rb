@@ -1,10 +1,17 @@
 class SessionsController < ApplicationController
   before_action :logged_in_redirect, only: [:new, :create]
 
-  def new
+  def new # login form and submit data
+    @messages = Message.all
+    @users = User.all
   end
 
-  def create
+  def show # show users messages and details
+    @user = current_user
+    @user_messages = current_user.messages
+  end
+
+  def create # handle new form login data
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
@@ -16,7 +23,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # logout - delete session
     session[:user_id] = nil
     flash[:success] = "Anda berhasil logout"
     redirect_to root_path
@@ -30,5 +37,4 @@ class SessionsController < ApplicationController
       redirect_to root_path
     end
   end
-
 end
