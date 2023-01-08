@@ -93,7 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # config.hosts << "app-massage-production.up.railway.app"
-  config.web_socket_server_url = "wss://app-message-production.up.railway.app/cable"
-  config.action_cable.url = 'wss://app-message-production.up.railway.app/cable'
   config.action_cable.allowed_request_origins = ["https://app-message-production.up.railway.app"]
 end

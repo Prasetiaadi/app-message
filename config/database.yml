@@ -22,7 +22,6 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV["DATABASE_URL"] %>
   adapter: postgresql
   database: db/production.postgre
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
