@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  before_action :check_if_logged_in?, only: [:new]
+
   def new # signup form and submit data
-    @users = User.new
+    @user = User.new
   end
 
   def create # handle new form signup data
