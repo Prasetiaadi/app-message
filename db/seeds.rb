@@ -9,6 +9,6 @@
 User.create(username: "Elea", password: "password", email: "elea@gmail.com")
 User.create(username: "Adi", password: "password", email: "adi@gmail.com")
 User.create(username: "admin", password: "password", email: "admin@gmail.com")
-User.create(username: "admin2", password: "password", email: "admin@gmail.com")
-User.create(username: "admin3", password: "password", email: "admin@gmail.com")
+User.create(username: "adminsatu", password: "password", email: "admin@gmail.com")
+User.create(username: "admintiga", password: "password", email: "admin@gmail.com")
 

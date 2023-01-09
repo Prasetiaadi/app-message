@@ -22,13 +22,11 @@ test:
   <<: *default
   database: app-message_test
 
+
+
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  adapter: postgresql
-  database: db/production.postgre
+
+  database: app-message_production
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-# production:
-#   <<: *default
-#   database: db/production.sqlite3
+

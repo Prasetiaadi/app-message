@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new # signup form and submit data
-
+    @user = User.new
   end
 
   def create # handle new form signup data
